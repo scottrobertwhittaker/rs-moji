@@ -1,3 +1,4 @@
+use parser;
 use runtime;
 
 pub struct Interpreter;
@@ -9,7 +10,7 @@ impl Interpreter {
         Interpreter
     }
 
-    pub fn evaluate(&self, ast: Vec<&str>) {
-        println!("Evaluating {}...", ast.join(", "));
+    pub fn evaluate(&self, ast: Vec<parser::Node>) {
+        println!("Evaluating...");
     }
 }

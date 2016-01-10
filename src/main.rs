@@ -10,7 +10,7 @@ fn main() {
 
     let tokens: Vec<char> = lexer::lex(code);
 
-    let ast = parser::parse(tokens);
+    let ast: Vec<parser::Node> = parser::parse(tokens);
 
     let runtime = runtime::new();
 
