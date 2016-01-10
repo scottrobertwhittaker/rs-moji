@@ -1,4 +1,5 @@
-pub fn parse<'a, 'b>(tokens: Vec<&'a str>) -> Vec<&'b str> {
-    println!("Parsing '{}'...", tokens.join(", "));
+pub fn parse<'a>(tokens: Vec<char>) -> Vec<&'a str> {
+    let program = tokens.iter().cloned().collect::<String>();
+    println!("Parsing '{}'...", program);
     vec!["A", "S", "T"]
 }

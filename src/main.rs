@@ -8,10 +8,7 @@ fn main() {
         "👍👍👍👍👍👍👍👍👍👍🔃👉👍👍👍👍👍👍👍👉👍👍👍👍👍👍👍👍👍👍👉👍👍👍👉👍👈👈👈👈👎🔙👉👍👍💻👉👍💻👍👍👍👍👍👍👍💻💻👍👍👍💻👉👍👍💻👈👈👍\
          👍👍👍👍👍👍👍👍👍👍👍👍👍👍💻👉💻👍👍👍💻👎👎👎👎👎👎💻👎👎👎👎👎👎👎👎💻👉👍💻👉💻"; // = ARGF.read.chomp;
 
-    let tokens = lexer::lex("test");
-    for i in tokens.iter() {
-        println!("* {}", i);
-    }
+    let tokens: Vec<char> = lexer::lex(code);
 
     let ast = parser::parse(tokens);
 
@@ -19,9 +16,4 @@ fn main() {
 
     let interpreter = interpreter::Interpreter::new(runtime);
     interpreter.evaluate(ast);
-}
-
-#[test]
-fn breathing_test() {
-    println!("Success!");
 }
