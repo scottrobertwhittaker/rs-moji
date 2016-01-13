@@ -14,6 +14,6 @@ fn main() {
 
     let runtime = runtime::new();
 
-    let interpreter = interpreter::Interpreter::new(runtime);
+    let mut interpreter = interpreter::new(runtime);
     interpreter.evaluate(ast);
 }
